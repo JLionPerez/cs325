@@ -5,20 +5,16 @@ def file_len(fname):
             pass
     return i + 1
 
-#Source: https://www.geeksforgeeks.org/python-program-for-insertion-sort/
+#Source: Introduction to Algorithms by Thomas H. Cormen, Chapter 2 pg.18 - Insertion Sort Pseudocode
 def inSort(arr):
-    # Traverse through 1 to len(arr) 
-    for i in range(1, len(arr)): 
-        key = arr[i] 
+    for j in range(1, len(arr)): #starts on the second index arr[1]
+        key = arr[j] 
   
-        # Move elements of arr[0..i-1], that are 
-        # greater than key, to one position ahead 
-        # of their current position 
-        j = i-1
-        while j >=0 and key < arr[j] : 
-                arr[j+1] = arr[j] 
-                j -= 1
-        arr[j+1] = key 
+        i = j - 1
+        while i >= 0 and key < arr[i] : 
+                arr[i + 1] = arr[i] 
+                i -= 1
+        arr[i + 1] = key 
 
 # Source: https://www.tutorialspoint.com/How-do-we-use-file-readlines-to-read-multiple-lines-using-Python
 def main(): 
@@ -29,11 +25,18 @@ def main():
             tempLine = line.rstrip()
             tempArr = tempLine.split(" ")
             intArr = [int(num) for num in tempArr]
-
             intArr.pop(0) #ignores first number
 
             inSort(intArr)
-            print(intArr)
+
+            strArr = ['{0} '.format(str(string)) for string in intArr]
+
+
+            out = open("insert.out", "a")
+            for x in strArr:
+                out.write(x)
+            out.write("\n")
+            out.close()
 
 
 if __name__ == "__main__":
