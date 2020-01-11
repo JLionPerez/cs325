@@ -31,7 +31,6 @@ def main():
 
             strArr = ['{0} '.format(str(string)) for string in intArr]
 
-
             out = open("insert.out", "a")
             for x in strArr:
                 out.write(x)
