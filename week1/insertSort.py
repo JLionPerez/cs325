@@ -29,7 +29,7 @@ def main():
 
             inSort(intArr)
 
-            strArr = ['{0} '.format(str(string)) for string in intArr]
+            strArr = ['{} '.format(str(string)) for string in intArr]
 
             out = open("insert.out", "a")
             for x in strArr:
