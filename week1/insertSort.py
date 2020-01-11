@@ -26,8 +26,14 @@ def main():
 
     with open("data.txt", 'r+') as f: #prints each line
         for line in f.readlines():
-            for x in line:
-                
+            tempLine = line.rstrip()
+            tempArr = tempLine.split(" ")
+            intArr = [int(num) for num in tempArr]
+
+            intArr.pop(0) #ignores first number
+
+            inSort(intArr)
+            print(intArr)
 
 
 if __name__ == "__main__":
