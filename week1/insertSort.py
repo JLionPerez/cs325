@@ -18,10 +18,10 @@ def inSort(arr):
                 i -= 1
         arr[i + 1] = key
 
-# Function name: 
-# Purpose: 
-# Arguments: 
-# Returns: 
+# Function name: main()
+# Purpose: Runs all of the functions and the main parts of the program, such as reading in the files and translating each line into arrays.
+# Arguments: none
+# Returns: none
 # Citation: https://www.tutorialspoint.com/How-do-we-use-file-readlines-to-read-multiple-lines-using-Python
 def main(): 
     with open("data.txt", 'r+') as f: #prints each line
