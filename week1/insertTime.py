@@ -26,8 +26,9 @@ def inSort(arr):
 # Arguments: none
 # Returns: none
 # Citation: http://www.learningaboutelectronics.com/Articles/How-to-create-an-array-of-random-integers-in-Python-with-numpy.php
+# Citation: programiz.com/python-programming/time
 def main(): 
-    n = 40000 #harcoded size, must change to get tests
+    n = 20000 #harcoded size, must change to get tests
     randArr = np.random.randint(0, 10000, n)
 
     inSort(randArr)
@@ -35,6 +36,6 @@ def main():
 
 # Runs the main function
 if __name__ == "__main__":
-    startTime = time.time()
+    startTime = time.time() #starting time
     main()
-    print("Time is %s seconds." % (time.time() - startTime))
+    print("Time is %s seconds." % (time.time() - startTime)) #subracts from actual time to get running time
