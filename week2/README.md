@@ -1,0 +1,1 @@
+To run the python program (badSort.py) you must type "python3 badSort.py" in the command line to run the program.
