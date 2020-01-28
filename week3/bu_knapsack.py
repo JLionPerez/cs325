@@ -4,7 +4,7 @@
 # Date: 27 January 2020 
 
 # Function name: bu_knapsack()
-# Purpose: Finds the optimal subset value.
+# Purpose: Finds the optimal subset(s).
 # Arguments: integer arrays, and integers
 # Returns: integer
 # Citation: https://www.sanfoundry.com/python-program-solve-0-1-knapsack-problem-using-dynamic-programming-bottom-up-approach/
@@ -25,8 +25,8 @@ def bu_knapsack(weight, value, W):
                 m[i][w] = m[i - 1][w] #current value will get the value previous
             else:
                 m[i][w] = max(m[i - 1][w - weight[i]] + value[i], m[i - 1][w])
- 
-    return m[n][W]
+
+    print("m[%d, %d]" % (n, W))
 
 # Function name: main()
 # Purpose: Opens file and reads data
@@ -39,7 +39,7 @@ def main():
     vals = [fileStr[i] for i in range(len(fileStr)) if i % 2 != 0]
     weights = [fileStr[i] for i in range(len(fileStr)) if i % 2 == 0]
 
-    print(bu_knapsack(weights, vals, 6))
+    bu_knapsack(weights, vals, 6)
 
 # runs main
 if __name__ == "__main__":
