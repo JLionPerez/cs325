@@ -10,8 +10,8 @@ import collections
 # Returns: greedyCoin()
 def greedyCoin (amount, coins, purse):
     length = len(coins)
-    for i in range(length, 0, -1): #start from the end of list
-        cent = coins[i - 1] #grab current position
+    for i in range(length, 0, -1): #start from the end of list (greatest value)
+        cent = coins[i - 1] #grab current value
     
         if amount >= cent:
             purse.append(cent) #add to purse
